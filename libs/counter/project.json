@@ -1,0 +1,27 @@
+{
+  "name": "counter",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/counter/src",
+  "prefix": "ht",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/counter"],
+      "options": {
+        "jestConfig": "libs/counter/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/counter/**/*.ts",
+          "libs/counter/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

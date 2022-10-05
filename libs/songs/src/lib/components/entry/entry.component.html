@@ -1,0 +1,65 @@
+<div data-testid="entry">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="addThisSong(focusme)">
+    <div class="form-group">
+      <label for="Title">Title</label>
+      <input
+        data-testid="title"
+        type="text"
+        #focusme
+        autofocus
+        class="form-control"
+        formControlName="title"
+        id="Title" />
+      <div
+        data-testid="title-validation"
+        class="alert alert-danger"
+        *ngIf="
+          form.controls.title.errors &&
+          (form.controls.title.dirty || form.controls.title.touched)
+        ">
+        <p *ngIf="form.controls.title.hasError('required')">This is Required</p>
+        <p *ngIf="form.controls.title.hasError('maxlength')">
+          This has a max length of 50
+        </p>
+        <p *ngIf="form.controls.title.hasError('minlength')">
+          You must have at least 3 letters in the title
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Artist">Artist</label>
+      <input
+        data-testid="artist"
+        type="text"
+        class="form-control"
+        formControlName="artist"
+        id="Artist" />
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          form.controls.artist.errors &&
+          (form.controls.artist.dirty || form.controls.artist.touched)
+        ">
+        <p *ngIf="form.controls.artist.hasError('required')">
+          This is Required
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Album">Album</label>
+      <input
+        data-testid="album"
+        type="text"
+        class="form-control"
+        formControlName="album"
+        id="Album" />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-success">
+      Add This Song!
+    </button>
+  </form>
+</div>

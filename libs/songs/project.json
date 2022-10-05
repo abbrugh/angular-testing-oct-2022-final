@@ -1,0 +1,27 @@
+{
+  "name": "songs",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/songs/src",
+  "prefix": "ht",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/songs"],
+      "options": {
+        "jestConfig": "libs/songs/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/songs/**/*.ts",
+          "libs/songs/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

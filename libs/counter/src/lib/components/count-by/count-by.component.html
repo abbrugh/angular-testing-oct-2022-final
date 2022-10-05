@@ -1,0 +1,20 @@
+<div data-testid="counter-by">
+  <button
+    (click)="changeDisabled('one')"
+    [disabled]="(disable$ | async) === 'one'"
+    data-testid="one">
+    Count By One
+  </button>
+  <button
+    (click)="changeDisabled('three')"
+    [disabled]="(disable$ | async) === 'three'"
+    data-testid="three">
+    Count By Three
+  </button>
+  <button
+    (click)="changeDisabled('five')"
+    [disabled]="(disable$ | async) === 'five'"
+    data-testid="five">
+    Count By Five
+  </button>
+</div>

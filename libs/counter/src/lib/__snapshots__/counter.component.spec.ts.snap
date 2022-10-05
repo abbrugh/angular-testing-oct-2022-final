@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CounterComponent initial state 1`] = `
+<div
+  data-testid="counter-play"
+>
+  <button
+    class="btn btn-danger"
+    data-testid="decrement"
+  >
+     Decrement 
+  </button>
+  <span
+    data-testid="current"
+  >
+    99
+  </span>
+  <button
+    data-testid="increment"
+  >
+     Increment 
+  </button>
+</div>
+`;

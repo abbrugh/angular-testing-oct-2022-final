@@ -1,0 +1,16 @@
+<div data-testid="counter-play">
+  <button
+    class="btn btn-danger"
+    data-testid="decrement"
+    (click)="decrement()">
+    Decrement
+  </button>
+  <span data-testid="current">{{ current$ | async }}</span>
+  <button
+    (click)="increment()"
+    data-testid="increment">
+    Increment
+  </button>
+</div>
+
+<router-outlet></router-outlet>

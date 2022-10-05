@@ -1,0 +1,26 @@
+<div
+  data-testid="list"
+  *ngIf="model$ | async as model">
+  <div
+    *ngIf="model.length === 0"
+    class="alert alert-danger"
+    data-testid="no-songs-alert">
+    <p>Sorry You Have No Songs! You Should Add Some!</p>
+  </div>
+  <ul data-testid="list-items">
+    <li
+      [attr.data-testid]="'list-items-' + i.toString()"
+      *ngFor="let song of model; index as i">
+      <p>
+        Title: <span data-testid="title">{{ song.title }}</span>
+      </p>
+      <p>
+        Artist: <span data-testid="artist">{{ song.artist }}</span>
+      </p>
+      <p>
+        Album:
+        <span data-testid="album">{{ song.album || 'No Album Recorded' }}</span>
+      </p>
+    </li>
+  </ul>
+</div>
